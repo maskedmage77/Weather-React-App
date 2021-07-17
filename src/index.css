@@ -1,13 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+        -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: white;
+    font-size: 16px;
+    background: linear-gradient(-45deg, #e7bf3c, #ee7752, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 45s ease infinite;
+    display:flex;
+    justify-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.App {
+    text-align: center;
+    height: calc(100vh - 4em);
+    min-width: 800px;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 1em;
+    background-image: linear-gradient(#0000003a, #00000027);
+    /* background: #520072; */
+}
+
+@media only screen and (max-width: calc(800px + 4em)){
+    .App {
+        width: calc(100vw - 4em);
+        min-width: 0px;
+    }
+}
+
+.todayIcon {
+    height: 4em;
+    display: inline-block;
+}
+.forecast {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.forecastDay {
+    border-radius: 0.5em;
+    flex-grow: 1;
+    padding: 1em;
+    margin: 0.5em;
+    padding-top: 0.5em;
+    background-image: linear-gradient(#00000027, #00000000);
+    line-height: 2em;
+}
+
+h1, h2, h3 {
+    margin: 0.25em;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+.footer {
+    position: absolute;
+    bottom: 1.5em;
+    text-align: center;
+    width: calc(100% - 4em);
 }

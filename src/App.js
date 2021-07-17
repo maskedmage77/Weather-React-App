@@ -1,21 +1,22 @@
 import { useEffect, useState } from 'react';
-import './App.css';
-import { getCurrentWeather } from './weather-api/weather-api';
-import CurrentWeather from './CurrentWeather';
+import { getForecast } from './weather-api/weather-api';
+import LocalWeather from './LocalWeather';
+import Footer from './Footer';
 
 function App() {
 
     useEffect(() => {
         let longitude , latitude;
     
+        // will execute once client geolocation available 
         function locationExists(position) {
             longitude = position.coords.longitude;
             latitude = position.coords.latitude;
     
-            getCurrentWeather(latitude + ',' + longitude)
+            getForecast(latitude + ',' + longitude, 3)
             .then((result) => {
-                console.log(result);
-                setLocalWeather(result);
+                // console.log(result);
+                setCurrentWeather(result);
                 setIsLoading(false);
             }); 
         }
@@ -29,14 +30,17 @@ function App() {
     }, []);
 
     // set current location's weather object
-    const [localWeather, setLocalWeather] = useState(null);
+    const [currentWeather, setCurrentWeather] = useState(null);
     // used to toggle loading message while fetching data
     const [isLoading, setIsLoading] = useState(true);
 
     return (
         <div className="App">
-            { isLoading && <div><h1>Loading...</h1></div> }
-            { localWeather && <CurrentWeather localWeather={localWeather}/> }
+            {/* render loading message */}
+            { isLoading && <div><h2>Loading...</h2></div> }
+            {/* render weather once fetched */}
+            { currentWeather && <LocalWeather currentWeather={currentWeather}/> } 
+            {/* <Footer /> */}
         </div>
     );
 }
