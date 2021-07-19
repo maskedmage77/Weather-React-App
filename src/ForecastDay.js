@@ -2,7 +2,10 @@ import { useState } from 'react';
 
 const ForecastDay = (props) => {
 
-    const [forecast, setForecast] = useState(props.forecast);
+    // Initialize props
+    const [forecast] = useState(props.forecast);
+
+    // Array of weekdays used to map to future days
     const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     const day = new Date (forecast.date);
     

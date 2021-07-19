@@ -4,7 +4,7 @@ const HourlyWeather = (props) => {
 
     const hour = props.hour;
 
-    // used to convert military time to standard time
+    // Converts military time to standard time
     function convert(i) {
         return moment(i, 'HH:mm:ss').format('h:mm a');
     }
