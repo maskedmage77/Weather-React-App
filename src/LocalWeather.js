@@ -15,9 +15,9 @@ const LocalWeather = (props) => {
             <div className="content" className="bg-black">
                 <div className="currentForecast">
                     <img className="todayIcon"src={ currentWeather.current.condition.icon } alt={ currentWeather.current.condition.text } />
-                   {/* <h2>{ currentWeather.location.name }, { currentWeather.location.region }</h2> */}
-                    <h2>{ currentWeather.current.condition.text }</h2>
-                    <h2>Current { Math.round(currentWeather.current.temp_f) }&#176;</h2>
+                   <h3>{ currentWeather.location.name }, { currentWeather.location.region }</h3>
+                    <p>{ currentWeather.current.condition.text }</p>
+                    <h1>&nbsp;&nbsp;{ Math.round(currentWeather.current.temp_f) }&#176;</h1>
 
                     <hr />
                     <div className="hourlyWeatherContainer">
