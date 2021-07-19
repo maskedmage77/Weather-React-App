@@ -47,6 +47,12 @@ body {
     height: 4em;
     display: inline-block;
 }
+
+.hourlyIcon {
+    height: 2em;
+    
+}
+
 .forecast {
     display: flex;
     justify-content: space-evenly;
@@ -62,7 +68,28 @@ body {
     line-height: 2em;
 }
 
-h1, h2, h3 {
+.hourlyWeather {
+    display: inline-block;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.hourlyWeatherContainer {
+    
+    overflow: auto;
+    white-space:nowrap;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hourlyWeatherContainer::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.hourlyWeatherContainer {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+h1, h2, h3, h4 {
     margin: 0.25em;
 }
 
@@ -76,6 +103,15 @@ h2 {
 
 h3 {
     font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1em;
+
+}
+
+hr {
+    color: rgba(255, 255, 255, 0.333);
 }
 
 .footer {

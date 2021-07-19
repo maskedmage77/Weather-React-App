@@ -1,35 +1,38 @@
+import HourlyWeather from "./HourlyWeather";
+import { useEffect, useState } from 'react';
+import ForecastDay from "./ForecastDay";
+
 const LocalWeather = (props) => {
 
     const currentWeather = props.currentWeather;
-
-    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     const now = new Date();
+    const currentHour = now.getHours();
+    const [hours, setHours] = useState(currentWeather.forecast.forecastday[0].hour.slice(currentHour + 1 ,24));
 
+    const [futureForecast, setFutureForecast] = useState(currentWeather.forecast.forecastday.splice(1));
+    console.log(futureForecast);
     return (
             <div className="content" className="bg-black">
                 <div className="currentForecast">
                     <img className="todayIcon"src={ currentWeather.current.condition.icon } alt={ currentWeather.current.condition.text } />
                    {/* <h2>{ currentWeather.location.name }, { currentWeather.location.region }</h2> */}
-                    <h3>{ currentWeather.current.condition.text }</h3>
-                    <h3>Current { Math.round(currentWeather.current.temp_f) }&#176;</h3>
-                    
+                    <h2>{ currentWeather.current.condition.text }</h2>
+                    <h2>Current { Math.round(currentWeather.current.temp_f) }&#176;</h2>
+
+                    <hr />
+                    <div className="hourlyWeatherContainer">
+                        
+                        { hours.map((hour) => (
+                            <HourlyWeather hour={ hour } key={ hour.time_epoch } />
+                        )) }
+                       
+                    </div>
+                    <hr />
+
                     <div className="forecast">
-                        <div className="forecastDay">
-                            <h3>Sunday</h3>
-                            Patchy rain possible
-                            <br />
-                            High: 75&#176;
-                            <br />
-                            Low: 69&#176;
-                        </div>
-                        <div className="forecastDay">
-                            <h3>Monday</h3>
-                            Patchy rain possible
-                            <br />
-                            High: 75&#176;
-                            <br />
-                            Low: 69&#176;
-                        </div>
+                        { futureForecast.map((forecast) => (
+                            <ForecastDay forecast={ forecast } key={ forecast.date_epoch } />
+                        )) } 
                     </div>
                 </div>
             </div>
