@@ -13,11 +13,16 @@ const ForecastDay = (props) => {
     return (
         <div className="forecastDay">
             <h3>{ days[day.getUTCDay()] }</h3>
+            <img className="hourlyIcon" src={ forecast.day.condition.icon } alt="" />
+            <br />
             { forecast.day.condition.text }
             <br />
+            
             High: { Math.round(forecast.day.maxtemp_f) }&#176;
             <br />
             Low: { Math.round(forecast.day.mintemp_f) }&#176;
+            <br />
+            Humidity: { forecast.day.avghumidity }&#176;
         </div>
     );
 }

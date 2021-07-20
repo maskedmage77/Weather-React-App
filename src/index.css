@@ -73,6 +73,7 @@ body {
 .forecast {
     display: flex;
     justify-content: space-evenly;
+    width: calc(100%);
 }
 
 .forecastDay {
@@ -83,6 +84,11 @@ body {
     padding-top: 0.5em;
     background-image: linear-gradient(#00000027, #00000000);
     line-height: 2em;
+}
+
+.forecast h3 {
+    margin-left: 0em;
+    margin-right: 0em;
 }
 
 .currentForecast p {
@@ -164,11 +170,4 @@ h4 {
 
 hr {
     color: rgba(255, 255, 255, 0.333);
-}
-
-.footer {
-    position: absolute;
-    bottom: 1.5em;
-    text-align: center;
-    width: calc(100% - 4em);
 }
