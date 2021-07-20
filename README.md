@@ -4,4 +4,4 @@ The application is designed to check if the user is using https. If https is use
 
 ## Photos
 
-![alt text](https://github.com/maskedmage77/Weather-React-App/blob/master/public/cinci.png?raw=true)
+![alt text](https://raw.githubusercontent.com/maskedmage77/Weather-React-App/master/public/cinci.PNG?token=AJKTUCHBW52MU3BRKKBP2KLA6Z2DE)
