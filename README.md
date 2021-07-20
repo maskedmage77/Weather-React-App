@@ -16,5 +16,6 @@ export const KEY = "[INSERT YOUR API KEY]";
 
 ## Photos
 
+![Front Page](https://github.com/maskedmage77/Weather-React-App/blob/master/public/front.PNG?raw=true)
 ![Cincinnati Weather](https://github.com/maskedmage77/Weather-React-App/blob/master/public/cinci.PNG?raw=true)
 ![Indianapolis Weather](https://github.com/maskedmage77/Weather-React-App/blob/master/public/indy.jpg?raw=true)
