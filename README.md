@@ -1,6 +1,14 @@
 # React Weather App
 
-The application is designed to check if the user is using https. If https is used it will ask the user's browser for geolocation data.If https is not being used it will ask the user to enter their location manually. 
+The application is designed to check if the user is using https. If https is used it will ask the user's browser for geolocation data. If https is not being used it will ask the user to enter their location manually. 
+
+## credentials.js
+
+The credentials.js file will need to be placed within the src/weather-api/ folder.
+
+```javascript
+export const KEY = "[INSERT YOUR API KEY]";
+```
 
 ## Photos
 
