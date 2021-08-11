@@ -22,7 +22,7 @@ const ForecastDay = (props) => {
             <br />
             Low: { Math.round(forecast.day.mintemp_f) }&#176;
             <br />
-            Humidity: { forecast.day.avghumidity }&#176;
+            Humidity: { forecast.day.avghumidity }%
         </div>
     );
 }
